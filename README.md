@@ -59,6 +59,8 @@ battle/                lotta offline (pagina, stile, logica, immagini)
 
 Si tratta di un progetto amatoriale e didattico senza scopo di lucro, non affiliato né approvato da Nintendo, Game Freak o The Pokémon Company. Pokémon e tutti i nomi, gli sprite e le immagini collegate sono marchi e proprietà dei rispettivi titolari. L'autore non si assume alcuna responsabilità per l'uso che ne viene fatto.
 
+Il codice è distribuito con licenza MIT (vedi [`LICENSE`](LICENSE)). Le immagini in `battle/img/` sono escluse dalla licenza e appartengono ai rispettivi proprietari.
+
 ---
 
 # English version
@@ -121,3 +123,5 @@ battle/                offline battle (page, style, logic, images)
 ## Legal notice
 
 This is a non-profit hobby and educational project, not affiliated with or endorsed by Nintendo, Game Freak or The Pokémon Company. Pokémon and all related names, sprites and images are trademarks and property of their respective owners. The author takes no responsibility for how it is used.
+
+The code is released under the MIT license (see [`LICENSE`](LICENSE)). The images in `battle/img/` are not covered by the license and belong to their respective owners.
