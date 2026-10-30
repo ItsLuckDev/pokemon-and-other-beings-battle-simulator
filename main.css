@@ -1,0 +1,80 @@
+/* GENERATO VIA CLAUDE CODE: ero un po' stanco... */
+/* stesso stile della battaglia: monospace, riquadri darkslategrey con bordo nero, bottoni grigi */
+body
+{
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;   /* menu al centro della pagina */
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bold;
+  color: aliceblue;
+  /* sfondo della battaglia scurito, così il menu risalta; il colore serve se l'immagine non carica */
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('battle/img/background.png') center / cover no-repeat;
+  background-color: darkslategrey;
+}
+
+#menu
+{
+  width: min(90%, 420px);
+  box-sizing: border-box;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background-color: darkslategrey;
+  border: 3px solid black;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+#menu h1
+{
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: xxx-large;
+  letter-spacing: 4px;
+  text-shadow: 0 4px 0 black;
+}
+
+/* link e bottoni del menu hanno lo stesso aspetto */
+#menu :is(button, a)
+{
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  color: aliceblue;
+  background-color: gray;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 black;   /* "spessore" del bottone: sparisce quando lo premi */
+  transition: transform 0.1s, background-color 0.1s;
+}
+
+#menu :is(button, a):hover:not(:disabled)
+{
+  background-color: slategray;
+  transform: translateY(-2px);
+}
+
+#menu :is(button, a):active:not(:disabled)
+{
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+/* bordo ben visibile quando ci si muove col tasto Tab */
+#menu :is(button, a):focus-visible
+{
+  outline: 3px solid chartreuse;
+  outline-offset: 3px;
+}
+
+#menu button:disabled
+{
+  opacity: 0.5;
+  cursor: not-allowed;
+}

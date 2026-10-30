@@ -1,0 +1,159 @@
+body{
+  font-family: monospace;
+  /* il testo si rimpicciolisce con l'altezza della finestra (min 14px, max 20px): riquadri e bottoni lo seguono */
+  font-size: clamp(14px, 2.5vh, 20px);
+  margin: 0;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.game
+{
+  height: 100vh;
+  box-sizing: border-box;
+  border: 6px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.gameField {
+  flex: 1;
+  position: relative;
+  background-image: url('img/background.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* ========== BOX ============ */
+/* parti comuni ai riquadri nemico e giocatore: le classi sotto aggiungono solo la posizione */
+/* niente altezza fissa: è alto quanto il contenuto, che è in em e quindi scala col testo */
+.infoBox
+{
+  border: 3px solid black;
+  background-color: darkslategrey;
+  position: absolute;
+  border-radius: 10px;
+  width: 43%;
+  box-sizing: border-box;
+  padding: 0.8em 1em;
+  display: grid;
+  grid-template-columns: auto 1fr;   /* riga 1: pokeball a sinistra, HP a destra */
+  align-items: center;
+  gap: 0.6em;
+}
+
+.HP { justify-self: end; }
+
+.pokeName
+{
+  grid-column: 1 / -1;   /* riga 2: il nome occupa tutta la larghezza */
+  font-size: 1.6em;
+}
+
+.Pokeballs img
+{
+  display: block;
+  height: 1.6em;
+  width: 1.6em;
+}
+
+.endGame
+{
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  margin: auto;
+  width: min(600px, 90%);
+  height: min(300px, 80%);
+  place-items: center; 
+  display: none;       /* nascosto finché il JS non aggiunge .win o .lose */
+  border: 3px solid black;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.4);
+  color: black;
+  font-size: xxx-large;
+  text-transform: uppercase;
+}
+
+.endGame.win  { display: grid; background-color: chartreuse; }
+.endGame.lose { display: grid; background-color: red; }
+
+.menuButtons button:disabled
+{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.info
+{
+  flex: 1;    /* prende lo spazio che i bottoni lasciano libero */
+  margin: 0;
+}
+
+
+/* ============ SPRITE ================ */
+/* altezza in % del campo e piedi sul centro della pedana dello sfondo:
+   lo sfondo è stirato al 100%, quindi le pedane restano sempre alla stessa % e gli sprite le seguono */
+.enemy img, .player img
+{
+  position: absolute;
+  transform: translateX(-50%); /* così left indica il centro dello sprite, non il bordo sinistro */
+}
+
+/* ============ ENEMY ================ */
+.enemy img
+{
+  height: 30%;
+  left: 76%;
+  bottom: 38%;
+}
+
+.InfoEnemyBox
+{
+  top: 20%;
+  left: 5%;
+}
+
+/* ================================= PLAYER =========================== */
+.menu
+{
+  height: 22%;
+  box-sizing: border-box;
+  display: flex;   /* testo a sinistra, bottoni a destra: stanno affiancati e non si coprono */
+  gap: 20px;
+  padding: 10px 20px;
+  border-top: 6px solid black;
+  background-color: darkslategrey;
+}
+
+/* griglia 2x2 alta quanto il menu: i bottoni si allargano e restringono con la finestra */
+.menuButtons
+{
+  width: min(620px, 60%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.menuButtons button
+{
+  font: inherit;
+  color: aliceblue;
+  border-radius: 5px;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.player img
+{
+  height: 45%;
+  left: 27%;
+  bottom: -1%;
+}
+
+/* ora sta dentro .gameField: bottom si misura dal fondo del campo, non della finestra */
+.InfoPlayerBox
+{
+  bottom: 3%;
+  right: 5%;
+}

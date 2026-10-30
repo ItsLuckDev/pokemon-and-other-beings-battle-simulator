@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pokemon</title>
+  <script src="./battle.js" defer></script>
+  <link rel="stylesheet" href="./battle.css">
+</head>
+<body>
+  <!-- i testi segnaposto qui sotto vengono sostituiti dal JS: restano visibili solo se il caricamento fallisce -->
+  <div class="game">
+    <div class="gameField">
+
+      <div class="endGame" id="endGame"></div>
+
+      <div class="enemy">
+        <img alt="Enemy Pokemon" class="enemySprite" id="enemySprite"/>
+      </div>
+      <div class="infoBox InfoEnemyBox">
+          <div class="Pokeballs"><img src="img/pokeball.png" alt=""></div>
+          <div class="HP" id="enemyHP">HP: --</div>
+          <div class="pokeName" id="enemyName">??? LV: --</div>
+      </div>
+
+      <div class="player">
+        <img alt="Your Pokemon" class="playerSprite" id="playerSprite"/>
+      </div>
+
+      <div class="infoBox InfoPlayerBox">
+          <div class="Pokeballs"><img src="img/pokeball.png" alt=""></div>
+          <div class="HP" id="playerHP">HP: --</div>
+          <div class="pokeName" id="pokeName">??? LV: --</div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <p class="info" id="info">Loading team...</p>
+      <div class="menuButtons">
+        <!-- la griglia 2x2 la fa il CSS -->
+        <button id="move1" disabled>---</button>
+        <button id="move2" disabled>---</button>
+        <button id="move3" disabled>---</button>
+        <button id="move4" disabled>---</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

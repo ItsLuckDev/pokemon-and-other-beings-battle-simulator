@@ -1,0 +1,12 @@
+{
+    "Name": "Charizard",
+    "Level": 100,
+    "HP": 150,
+    "moves": [
+        { "moveName": "Lanciafiamme", "damage": 25 },
+        { "moveName": "Braciere", "damage": 10 },
+        { "moveName": "Sgranocchio", "damage": 20 },
+        { "moveName": "DummyMove (0 atk)", "damage": 0 }
+    ],
+    "Sprite": "img/charizard.png"
+}
